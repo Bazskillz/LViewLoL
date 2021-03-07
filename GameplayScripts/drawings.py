@@ -8,7 +8,7 @@ import itertools, math
 from commons.skills import *
 from copy import copy
 
-lview_script_info = {
+BOL_script_info = {
 	"script": "Drawings",
 	"author": "leryss",
 	"description": "Draws indicators for different things"
@@ -25,7 +25,7 @@ skillshots_max_speed  = 0
 skillshots_show_ally  = False
 skillshots_show_enemy = False
 
-def lview_load_cfg(cfg):
+def BOL_load_cfg(cfg):
 	global turret_ranges, minion_last_hit, attack_range
 	global skillshots, skillshots_predict, skillshots_min_range, skillshots_max_speed, skillshots_show_ally, skillshots_show_enemy
 	turret_ranges        = cfg.get_bool("turret_ranges", True)
@@ -39,7 +39,7 @@ def lview_load_cfg(cfg):
 	skillshots_min_range  = cfg.get_float("skillshots_min_range", 500)
 	skillshots_max_speed  = cfg.get_float("skillshots_max_speed", 2500)
 	
-def lview_save_cfg(cfg):
+def BOL_save_cfg(cfg):
 	global turret_ranges, minion_last_hit, attack_range
 	global skillshots, skillshots_predict, skillshots_min_range, skillshots_max_speed, skillshots_show_ally, skillshots_show_enemy
 	cfg.set_bool("turret_ranges",         turret_ranges)
@@ -53,7 +53,7 @@ def lview_save_cfg(cfg):
 	cfg.set_float("skillshots_min_range", skillshots_min_range)
 	cfg.set_float("skillshots_max_speed", skillshots_max_speed)
 	
-def lview_draw_settings(game, ui):
+def BOL_draw_settings(game, ui):
 	global turret_ranges, minion_last_hit, attack_range
 	global skillshots, skillshots_predict, skillshots_min_range, skillshots_max_speed, skillshots_show_ally, skillshots_show_enemy
 	turret_ranges   = ui.checkbox("Turret ranges", turret_ranges)
@@ -150,7 +150,7 @@ def draw_skillshots(game, player):
 			game.draw_circle_world_filled(end_pos, r*percent_done, 40, color)
 
 	
-def lview_update(game, ui):
+def BOL_update(game, ui):
 	global turret_ranges, minion_last_hit, attack_range, skillshots
 	
 	player = game.player

@@ -7,10 +7,10 @@ from copy import copy
 from math import *
 from champions import index
 
-lview_script_info = {
+BOL_script_info = {
 	"script": "Evader",
 	"author": "anonymous developer",
-	"description": "Evade module with LviewLoL"
+	"description": "Evade module with BOLLoL"
 }
 
 is_top = True
@@ -20,19 +20,19 @@ bound_max = 0
 evades = False
 targeting = TargetingConfig()
 
-def lview_load_cfg(cfg):
+def BOL_load_cfg(cfg):
 	global evades, is_top, draw_evade_line
 	evades            = cfg.get_bool("evades", True)
 	is_top = cfg.get_bool("is_top", True)
 	draw_evade_line = cfg.get_bool("draw_evade_line", draw_evade_line)
 	
-def lview_save_cfg(cfg):
+def BOL_save_cfg(cfg):
 	global evades, is_top, draw_evade_line
 	cfg.set_bool("evades",            evades)
 	is_top = cfg.set_bool("is_top", is_top)
 	draw_evade_line = cfg.set_bool("draw_evade_line", draw_evade_line)
 	
-def lview_draw_settings(game, ui):
+def BOL_draw_settings(game, ui):
 	global evades, is_top, draw_evade_line
 	ui.separator()
 	ui.text("Evader (Experimental)")
@@ -76,7 +76,7 @@ def evade_skills(game, player):
 			evade(game, pos, old_cpos)
 			index.useEvadeToChampion(game, pos)
 				
-def lview_update(game, ui):
+def BOL_update(game, ui):
 	global evades
 	
 	player = game.player

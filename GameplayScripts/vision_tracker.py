@@ -1,7 +1,7 @@
 from lview import *
 import json
 
-lview_script_info = {
+BOL_script_info = {
 	"script": "Vision Tracker",
 	"author": "leryss",
 	"description": "Tracks enemy invisible objects and clones"
@@ -40,7 +40,7 @@ clones = {
 }
 
 
-def lview_load_cfg(cfg):
+def BOL_load_cfg(cfg):
 	global show_clones, show_wards, show_traps, traps, wards
 
 	show_clones = cfg.get_bool("show_clones", True)
@@ -50,7 +50,7 @@ def lview_load_cfg(cfg):
 	traps = json.loads(cfg.get_str("traps", json.dumps(traps)))
 	wards = json.loads(cfg.get_str("wards", json.dumps(wards)))
 	
-def lview_save_cfg(cfg):
+def BOL_save_cfg(cfg):
 	global show_clones, show_wards, show_traps, traps, wards
 	
 	cfg.set_bool("show_clones", show_clones)
@@ -60,7 +60,7 @@ def lview_save_cfg(cfg):
 	cfg.set_str("traps", json.dumps(traps))
 	cfg.set_str("wards", json.dumps(wards))
 	
-def lview_draw_settings(game, ui):
+def BOL_draw_settings(game, ui):
 	global traps, wards
 	global show_clones, show_wards, show_traps
 	
@@ -101,7 +101,7 @@ def draw(game, obj, radius, show_circle_world, show_circle_map, icon):
 		p = game.world_to_minimap(obj.pos)
 		game.draw_circle(game.world_to_minimap(obj.pos), game.distance_to_minimap(radius), 15, 2, Color.RED)
 
-def lview_update(game, ui):
+def BOL_update(game, ui):
 	
 	global show_clones, show_wards, show_traps
 	global traps, wards, clones

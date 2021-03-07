@@ -11,13 +11,13 @@ harass_toggled = False
 harass_key = 0
 toggled = False
 
-lview_script_info = {
+BOL_script_info = {
 	"script": "Champion scripts",
 	"author": "anonymous developer",
-	"description": "Champion scripts for Lview"
+	"description": "Champion scripts for BOL"
 }
 
-def lview_load_cfg(cfg):
+def BOL_load_cfg(cfg):
 	global champion_combo, targeting, key_combo, harass_key, index, harass_toggled
 	champion_combo = cfg.get_bool("champion_combo", True)
 	key_combo    = cfg.get_int("key_combo", 0)
@@ -25,7 +25,7 @@ def lview_load_cfg(cfg):
 	harass_toggled     = cfg.get_bool("harass_toggled", False)
 	targeting.load_from_cfg(cfg)
 
-def lview_save_cfg(cfg):
+def BOL_save_cfg(cfg):
 	global champion_combo, targeting, key_combo, harass_key, index, harass_toggled
 	cfg.set_bool("champion_combo", champion_combo)
 	cfg.set_bool("harass_key", harass_key)
@@ -33,7 +33,7 @@ def lview_save_cfg(cfg):
 	cfg.set_bool("harass_toggled", harass_toggled)
 	targeting.save_to_cfg(cfg)
 
-def lview_draw_settings(game, ui):
+def BOL_draw_settings(game, ui):
 	global champion_combo, key_combo, harass_key, harass_toggled
 	global targeting, index
 	champ_name = game.player.name
@@ -43,7 +43,7 @@ def lview_draw_settings(game, ui):
 	harass_toggled     = ui.checkbox("Harass toggle mode", harass_toggled)
 	targeting.draw(ui)
 
-def lview_update(game, ui):
+def BOL_update(game, ui):
 	global champion_combo, harass_toggled, key_combo, harass_key
 
 	self = game.player

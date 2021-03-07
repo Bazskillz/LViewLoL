@@ -3,7 +3,7 @@ from commons import skills
 from commons.targeting import TargetingConfig
 import time, json
 
-lview_script_info = {
+BOL_script_info = {
 	"script": "Orbwalker",
 	"author": "leryss",
 	"description": "Automatically kites enemies. Also has last hit built in"
@@ -22,7 +22,7 @@ toggled = False
 
 targeting = TargetingConfig() 
 
-def lview_load_cfg(cfg):
+def BOL_load_cfg(cfg):
 	global key_attack_move, key_orbwalk, max_atk_speed, auto_last_hit, toggle_mode
 	global targeting
 	
@@ -33,7 +33,7 @@ def lview_load_cfg(cfg):
 	toggle_mode     = cfg.get_bool("toggle_mode", False)
 	targeting.load_from_cfg(cfg)
 	
-def lview_save_cfg(cfg):
+def BOL_save_cfg(cfg):
 	global key_attack_move, key_orbwalk, max_atk_speed, auto_last_hit, toggle_mode
 	global targeting
 		
@@ -44,7 +44,7 @@ def lview_save_cfg(cfg):
 	cfg.set_bool("toggle_mode", toggle_mode)
 	targeting.save_to_cfg(cfg)
 	
-def lview_draw_settings(game, ui):
+def BOL_draw_settings(game, ui):
 	global key_attack_move, key_orbwalk, max_atk_speed, auto_last_hit, toggle_mode
 	global targeting
 	
@@ -76,7 +76,7 @@ def get_target(game):
 	
 	return target
 
-def lview_update(game, ui):
+def BOL_update(game, ui):
 	global last_attacked, alternate, last_moved
 	global key_attack_move, key_orbwalk, max_atk_speed
 	global toggle_mode, toggled

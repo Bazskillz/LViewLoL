@@ -4,7 +4,7 @@ show_local_champ = False
 show_allies = False
 show_enemies = False
 
-lview_script_info = {
+BOL_script_info = {
 	"script": "Spell Tracker",
 	"author": "leryss",
 	"description": "Tracks spell cooldowns and levels"
@@ -53,7 +53,7 @@ def draw_overlay_on_champ(game, champ):
 	draw_spell(game, champ.F, p, 15, False, False)
 
 
-def lview_update(game, ui):
+def BOL_update(game, ui):
 	global show_allies, show_enemies, show_local_champ
 	
 	for champ in game.champs:
@@ -67,21 +67,21 @@ def lview_update(game, ui):
 			elif champ.is_enemy_to(game.player) and show_enemies:
 				draw_overlay_on_champ(game, champ)
 
-def lview_load_cfg(cfg):
+def BOL_load_cfg(cfg):
 	global show_allies, show_enemies, show_local_champ
 	
 	show_allies = cfg.get_bool("show_allies", False)
 	show_enemies = cfg.get_bool("show_enemies", True)
 	show_local_champ = cfg.get_bool("show_local_champ", False)
 	
-def lview_save_cfg(cfg):
+def BOL_save_cfg(cfg):
 	global show_allies, show_enemies, show_local_champ
 	
 	cfg.set_bool("show_allies", show_allies)
 	cfg.set_bool("show_enemies", show_enemies)
 	cfg.set_bool("show_local_champ", show_local_champ)
 	
-def lview_draw_settings(game, ui):
+def BOL_draw_settings(game, ui):
 	global show_allies, show_enemies, show_local_champ
 	
 	show_allies = ui.checkbox("Show overlay on allies", show_allies)

@@ -1,7 +1,7 @@
 from lview import *
 from time import time
 
-lview_script_info = {
+BOL_script_info = {
 	"script": "Champion Tracker",
 	"author": "leryss",
 	"description": "Tracks a enemy throughout the map leaving a trail on the minimap. It will track the enemy jungler by default"
@@ -16,21 +16,21 @@ tracked_champ_id = 0
 seconds_to_track = 3.0
 t_last_save_tracks = 0
 
-def lview_load_cfg(cfg):
+def BOL_load_cfg(cfg):
 	global seconds_to_track
 	seconds_to_track = cfg.get_float("seconds_to_track", 10)
 	
-def lview_save_cfg(cfg):
+def BOL_save_cfg(cfg):
 	global seconds_to_track
 	cfg.set_float("seconds_to_track", seconds_to_track)
 	
-def lview_draw_settings(game, ui):
+def BOL_draw_settings(game, ui):
 	global tracked_champ_id, seconds_to_track, tracks, champ_ids
 	
 	seconds_to_track = ui.dragfloat("Seconds to track", seconds_to_track, 0.1, 3, 20)
 	tracked_champ_id = ui.listbox("Champion to track", [game.get_obj_by_netid(net_id).name for net_id in champ_ids], tracked_champ_id)
 	
-def lview_update(game, ui):
+def BOL_update(game, ui):
 	
 	global first_iter, champ_ids
 	global tracks, tracked_champ_id, seconds_to_track, t_last_save_tracks

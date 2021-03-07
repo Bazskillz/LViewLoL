@@ -4,7 +4,7 @@ from commons.skills import *
 import json, time
 from pprint import pprint
 
-lview_script_info = {
+BOL_script_info = {
 	"script": "Auto Spell",
 	"author": "leryss",
 	"description": "Automatically casts spells on targets. Skillshots are cast using movement speed prediction. Works great for MOST skills but fails miserably for a few (for example yuumis Q)",
@@ -18,24 +18,24 @@ cast_keys = {
 	'R': 0
 }
 
-def lview_load_cfg(cfg):
+def BOL_load_cfg(cfg):
 	global targeting, cast_keys
 	targeting.load_from_cfg(cfg)
 	cast_keys = json.loads(cfg.get_str('cast_keys', json.dumps(cast_keys)))
 	
-def lview_save_cfg(cfg):
+def BOL_save_cfg(cfg):
 	global targeting, cast_keys
 	targeting.save_to_cfg(cfg)
 	cfg.set_str('cast_keys', json.dumps(cast_keys))
 
-def lview_draw_settings(game, ui):
+def BOL_draw_settings(game, ui):
 	global targeting, cast_keys
 	targeting.draw(ui)
 	for slot, key in cast_keys.items():
 		cast_keys[slot] = ui.keyselect(f'Key to cast {slot}', key)
 	draw_prediction_info(game, ui)
 	
-def lview_update(game, ui):
+def BOL_update(game, ui):
 	global targeting, cast_keys
 
 	for slot, key in cast_keys.items():

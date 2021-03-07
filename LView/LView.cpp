@@ -57,10 +57,10 @@ int main()
 
 	try {
 		printf("[+] Initializing PyModule\n");
-		PyImport_AppendInittab("lview", &PyInit_lview);
+		PyImport_AppendInittab("BOL", &PyInit_BOL);
 		Py_Initialize();
 
-		printf("[+] Initialising imgui and directx UI\n");
+		printf("[+] Initialising Overlay\n");
 		overlay.Init();
 
 		printf("[+] Loading static map data\n\n");

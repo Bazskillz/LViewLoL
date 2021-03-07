@@ -1,6 +1,6 @@
 from lview import *
 
-lview_script_info = {
+BOL_script_info = {
 	"script": "Map Awareness",
 	"author": "leryss",
 	"description": "Cheat that improves your map awareness."
@@ -11,21 +11,21 @@ show_alert_enemy_close      = False
 show_last_enemy_pos         = False
 show_last_enemy_pos_minimap = False
 
-def lview_load_cfg(cfg):
+def BOL_load_cfg(cfg):
 	global bound_max, show_alert_enemy_close, show_last_enemy_pos, show_last_enemy_pos_minimap
 	show_alert_enemy_close      = cfg.get_bool("show_alert_enemy_close", True)
 	show_last_enemy_pos         = cfg.get_bool("show_last_enemy_pos", True)
 	show_last_enemy_pos_minimap = cfg.get_bool("show_last_enemy_pos_minimap", True)
 	bound_max                   = cfg.get_float("bound_max", 4000)
 	
-def lview_save_cfg(cfg):
+def BOL_save_cfg(cfg):
 	global bound_max, show_alert_enemy_close, show_last_enemy_pos, show_last_enemy_pos_minimap
 	cfg.set_float("bound_max",                  bound_max)
 	cfg.set_bool("show_alert_enemy_close",      show_alert_enemy_close)
 	cfg.set_bool("show_last_enemy_pos",         show_last_enemy_pos)
 	cfg.set_bool("show_last_enemy_pos_minimap", show_last_enemy_pos_minimap)
 	
-def lview_draw_settings(game, ui):
+def BOL_draw_settings(game, ui):
 	global bound_max, show_alert_enemy_close, show_last_enemy_pos, show_last_enemy_pos_minimap
 	
 	show_last_enemy_pos = ui.checkbox("Show last position of champions", show_last_enemy_pos)
@@ -85,7 +85,7 @@ def show_last_pos_minimap(game, champ):
 		
 	draw_champ_world_icon(game, champ, game.world_to_minimap(champ.pos), 24.0, False, False, False)
 	
-def lview_update(game, ui):
+def BOL_update(game, ui):
 	global bound_max, show_alert_enemy_close, show_last_enemy_pos, show_last_enemy_pos_minimap
 	for champ in game.champs:
 		if show_alert_enemy_close:

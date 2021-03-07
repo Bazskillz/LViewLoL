@@ -1,7 +1,7 @@
 from lview import *
 from pprint import pprint
 
-lview_script_info = {
+BOL_script_info = {
 	"script": "Object Explorer",
 	"author": "leryss",
 	"description": "This is not a cheat. This just provides a way to explore ingame objects"
@@ -143,16 +143,16 @@ def draw_list(label, objs, ui, draw_func):
 			draw_func(obj, ui)
 		ui.treepop()
 	
-def lview_load_cfg(cfg):
+def BOL_load_cfg(cfg):
 	pass
 	
-def lview_save_cfg(cfg):
+def BOL_save_cfg(cfg):
 	pass
 	
-def lview_draw_settings(objs, ui):
+def BOL_draw_settings(objs, ui):
 	pass
 	
-def lview_update(game, ui):
+def BOL_update(game, ui):
 	
 	ui.begin("Object Viewer")
 	

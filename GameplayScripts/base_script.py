@@ -1,20 +1,20 @@
 from lview import *
 
-lview_script_info = {
+BOL_script_info = {
 	"script": "<script-name>",
 	"author": "<author-name>",
 	"description": "<script-description>",
 	"target_champ": "none"
 }
 
-def lview_load_cfg(cfg):
+def BOL_load_cfg(cfg):
 	pass
 	
-def lview_save_cfg(cfg):
+def BOL_save_cfg(cfg):
 	pass
 	
-def lview_draw_settings(game, ui):
+def BOL_draw_settings(game, ui):
 	pass
 	
-def lview_update(game, ui):
+def BOL_update(game, ui):
 	pass

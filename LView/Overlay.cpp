@@ -133,12 +133,12 @@ void Overlay::DrawUI(PyGame& state, MemSnapshot& memSnapshot) {
 
 	ImGui::SetNextWindowPos(ImVec2(650, 20), ImGuiCond_FirstUseEver);
 	ImGui::SetNextWindowSize(ImVec2(550, 680), ImGuiCond_FirstUseEver);
-	if (!ImGui::Begin("LVIEW by leryss")) {
+	if (!ImGui::Begin("BOL by Bassie")) {
 		ImGui::End();
 		return;
 	}
 
-	if (ImGui::BeginTabBar("LViewTabBar", ImGuiTabBarFlags_None)) {
+	if (ImGui::BeginTabBar("BOLTabBar", ImGuiTabBarFlags_None)) {
 		if (ImGui::BeginTabItem("Scripts##ScriptsId")) {
 			DrawScriptSettings(state, memSnapshot);
 			ImGui::EndTabItem();

@@ -30,12 +30,12 @@ bool Script::LoadFunc(PyObject** loadInto, const char* funcName) {
 }
 
 bool Script::LoadInfo() {
-	PyObject* dictName = PyUnicode_FromString("lview_script_info");
+	PyObject* dictName = PyUnicode_FromString("BOL_script_info");
 	PyObject* dictAttr = PyObject_GetAttr(moduleObj, dictName);
 	Py_DECREF(dictName);
 
 	if (dictAttr == NULL) {
-		loadError = std::string("No `lview_script_info` dictionary found in script");
+		loadError = std::string("No `BOL_script_info` dictionary found in script");
 		return false;
 	}
 
@@ -81,10 +81,10 @@ void Script::Load(const char * file)
 	}
 	else {
 		if (LoadInfo() &&
-			LoadFunc(&updateFunc, "lview_update") &&
-			LoadFunc(&drawSettingsFunc, "lview_draw_settings") &&
-			LoadFunc(&loadCfgFunc, "lview_load_cfg") &&
-			LoadFunc(&saveCfgFunc, "lview_save_cfg")) {
+			LoadFunc(&updateFunc, "BOL_update") &&
+			LoadFunc(&drawSettingsFunc, "BOL_draw_settings") &&
+			LoadFunc(&loadCfgFunc, "BOL_load_cfg") &&
+			LoadFunc(&saveCfgFunc, "BOL_save_cfg")) {
 
 			loadError.clear();
 		}

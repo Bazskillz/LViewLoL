@@ -4,19 +4,19 @@ from lview import *
 import json, time, os
 from pprint import pformat
 
-lview_script_info = {
+BOL_script_info = {
 	"script": "Util Make Height Map",
 	"author": "<author-name>",
 	"description": "<script-description>"
 }
 
-def lview_load_cfg(cfg):
+def BOL_load_cfg(cfg):
 	pass
 	
-def lview_save_cfg(cfg):
+def BOL_save_cfg(cfg):
 	pass
 	
-def lview_draw_settings(game, ui):
+def BOL_draw_settings(game, ui):
 	global enable_draw
 	if ui.button("Extrapolate"):
 		extrapolate()
@@ -113,7 +113,7 @@ def draw(game):
 last_launched_t = 0
 last_moved_t = 0
 
-def lview_update(game, ui):
+def BOL_update(game, ui):
 	global m, size, enable_draw, time_last_save, first_iter
 	global file_name
 	global last_launched_t, last_moved_t

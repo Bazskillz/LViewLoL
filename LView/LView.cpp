@@ -36,13 +36,20 @@ void MainLoop(Overlay& overlay, LeagueMemoryReader& reader);
 int main()
 {
 	printf(
-		"	:::    :::     ::: ::::::::::: :::::::::: :::       ::: \n"
-		"	:+:    :+:     :+:     :+:     :+:        :+:       :+: \n"
-		"	+:+    +:+     +:+     +:+     +:+        +:+       +:+ \n"
-		"	+#+    +#+     +:+     +#+     +#++:++#   +#+  +:+  +#+ \n"
-		"	+#+     +#+   +#+      +#+     +#+        +#+ +#+#+ +#+ \n"
-		"	#+#      #+#+#+#       #+#     #+#         #+#+# #+#+#  \n"
-		"	########## ###     ########### ##########   ###   ###   \n\n"
+		"  \\/________________        \n"
+		" /     _____________)\n"
+		"/     /      _  _ |         \n"
+		"\\/\\/\\/     (O) (O)|           \n"
+		"  |           ------, \n"
+		"  |  _       ______/ \n"
+		"  | (_      /   \\  \\\n"
+		"  |        /  ___\\_ \\       \n"
+		"  |        \\      / / \n"
+		"__|_________\\______/\n"
+		"\\______________\\./__\\   \n"
+		" /     .       | \\  |\n"
+		" \\    /_\\   .  |  \\ |\\     \n"
+		" |`\\       /_\\ |   \\| \\"
 	);
 
 	Overlay overlay = Overlay();
@@ -149,7 +156,7 @@ void MainLoop(Overlay& overlay, LeagueMemoryReader& reader) {
 bool Authenticate() {
 
 
-	Aws::SDKOptions options;
+	/*Aws::SDKOptions options;
 	Aws::InitAPI(options);
 
 	ConfigSet* cfg = ConfigSet::Get();
@@ -210,6 +217,7 @@ bool Authenticate() {
 		return false;
 	}
 	printf("[+] Server authentication succeeded: %s\n", msg.c_str());
+	*/
 
 	return true;
 }
